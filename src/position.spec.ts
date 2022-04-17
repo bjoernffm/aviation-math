@@ -1,4 +1,4 @@
-const { Position } = require('../dist/geomath');
+import { Position } from './position';
 
 describe('Position', () => {
     test('attributes are correctly set', () => {
