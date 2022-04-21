@@ -1,3 +1,5 @@
+import { Position } from "./position";
+
 export type Radians = number;
 
 export type Degrees = number;
@@ -11,6 +13,15 @@ export type Metres = number;
 export type Minutes = number;
 export type NauticalMiles = number;
 
+export function clampAngle(a: DegreesTrue): DegreesTrue {
+    while (a >= 360) {
+        a -= 360;
+    }
+    while (a < 0) {
+        a += 360;
+    }
+    return a;
+}
 export function DegToRad(value: Degrees): Radians {
     return value * (Math.PI / 180);
 }
@@ -27,6 +38,19 @@ export const robustAcos = (value: number): number => {
 
     return value;
 };
+export function coordinatesToSpherical(location: Position) {
+    return [
+        Math.cos(DegToRad(location.lat)) * Math.cos(DegToRad(location.lon)),
+        Math.cos(DegToRad(location.lat)) * Math.sin(DegToRad(location.lon)),
+        Math.sin(DegToRad(location.lat)),
+    ];
+}
+export function sphericalToCoordinates(spherical: [number, number, number]): Position {
+    return new Position(
+        RadToDeg(Math.asin(spherical[2])),
+        RadToDeg(Math.atan2(spherical[1], spherical[0]))
+    );
+}
 
 export const MIN_LAT: Latitude = -90;
 export const MAX_LAT: Latitude = 90;
