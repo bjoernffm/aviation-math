@@ -1,5 +1,5 @@
 {
-  "name": "geomath",
+  "name": "aviation-math",
   "version": "0.3.0",
   "description": "",
   "module": "dist/bundle.js",
@@ -7,7 +7,15 @@
     "build": "webpack",
     "test": "jest"
   },
-  "author": "Bjoern Ebbrecht <bjoern.ebbrecht@gmail.com>",
+  "homepage": "https://github.com/bjoernffm/aviation-math#readme",
+  "author": {
+    "name" : "Bjoern Ebbrecht",
+    "email" : "bjoern.ebbrecht@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bjoernffm/aviation-math.git"
+  },
   "license": "ISC",
   "typings": "main.d.ts",
   "devDependencies": {
