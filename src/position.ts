@@ -110,12 +110,12 @@ export class Position {
         let result = [];
         result.push(this.latDegreesAbs.toString().padStart(2, '0')+"°");
         result.push(Math.trunc(this.latMinutes).toString().padStart(2, '0')+"′");
-        result.push(this.latSeconds.toFixed(2).toString().padStart(2, '0')+"″");
+        result.push(this.latSeconds.toFixed(2).toString().padStart(5, '0')+"″");
         result.push(this.latHemisphere);
         
-        result.push(this.lonDegreesAbs.toString().padStart(2, '0')+"°");
+        result.push(this.lonDegreesAbs.toString().padStart(3, '0')+"°");
         result.push(Math.trunc(this.lonMinutes).toString().padStart(2, '0')+"′");
-        result.push(this.lonSeconds.toFixed(2).toString().padStart(2, '0')+"″");
+        result.push(this.lonSeconds.toFixed(2).toString().padStart(5, '0')+"″");
         result.push(this.lonHemisphere);
 
         return result.join(" ");
@@ -128,7 +128,7 @@ export class Position {
         result.push(Math.trunc(this.latSeconds).toString().padStart(2, '0'));
         result.push(this.latHemisphere);
         
-        result.push(this.lonDegreesAbs.toString().padStart(2, '0'));
+        result.push(this.lonDegreesAbs.toString().padStart(3, '0'));
         result.push(Math.trunc(this.lonMinutes).toString().padStart(2, '0'));
         result.push(Math.trunc(this.lonSeconds).toString().padStart(2, '0'));
         result.push(this.lonHemisphere);
@@ -142,7 +142,7 @@ export class Position {
         result.push(this.latMinutes.toFixed(3).toString().padStart(2, '0')+"′");
         result.push(this.latHemisphere);
         
-        result.push(this.lonDegreesAbs.toString().padStart(2, '0')+"°");
+        result.push(this.lonDegreesAbs.toString().padStart(3, '0')+"°");
         result.push(this.lonMinutes.toFixed(3).toString().padStart(2, '0')+"′");
         result.push(this.lonHemisphere);
 

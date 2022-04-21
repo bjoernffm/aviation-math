@@ -16,10 +16,10 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
-    filename: 'geomath.js',
+    filename: 'aviation-math.js',
     path: path.resolve(__dirname, 'dist'),
     library: {
-      name: 'geomath',
+      name: 'aviation-math',
       type: 'umd',
     },
     globalObject: 'this'

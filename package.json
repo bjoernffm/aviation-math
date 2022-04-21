@@ -2,7 +2,8 @@
   "name": "aviation-math",
   "version": "0.3.0",
   "description": "",
-  "module": "dist/bundle.js",
+  "main": "dist/aviation-math.js",
+  "module": "dist/aviation-math.js",
   "scripts": {
     "build": "webpack",
     "test": "jest"
@@ -17,7 +18,7 @@
     "url": "https://github.com/bjoernffm/aviation-math.git"
   },
   "license": "ISC",
-  "typings": "main.d.ts",
+  "typings": "dist/types/index.d.ts",
   "devDependencies": {
     "@types/jest": "^27.4.1",
     "jest": "^27.5.1",

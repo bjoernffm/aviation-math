@@ -1,5 +1,5 @@
-import { TurnDirection } from '../common';
-import { Position } from '../position';
+import { TurnDirection } from './common';
+import { Position } from './position';
 import { projectTurnPosition } from './projectTurnPosition';
 
 describe('placeBearingDistance', () => {

@@ -1,5 +1,5 @@
-import { DegToRad, EARTH_RADIUS, NauticalMiles, robustAcos } from "../common";
-import { Position } from "../position";
+import { DegToRad, EARTH_RADIUS, NauticalMiles, robustAcos } from "./common";
+import { Position } from "./position";
 
 export function distance(from: Position, to: Position) : NauticalMiles {
     return Math.acos(

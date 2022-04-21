@@ -1,4 +1,4 @@
-import { Degrees, DegToRad, Knots, NauticalMiles } from "../common";
+import { Degrees, DegToRad, Knots, NauticalMiles } from "./common";
 
 export function turnRadius(speed: Knots, bankAngle: Degrees) : NauticalMiles
 {

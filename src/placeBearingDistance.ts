@@ -1,5 +1,5 @@
-import { DegreesTrue, DegToRad, EARTH_RADIUS, MAX_LON, MIN_LON, NauticalMiles, RadToDeg } from "../common";
-import { Position } from "../position";
+import { DegreesTrue, DegToRad, EARTH_RADIUS, MAX_LON, MIN_LON, NauticalMiles, RadToDeg } from "./common";
+import { Position } from "./position";
 
 export function placeBearingDistance(reference: Position, bearing: DegreesTrue, distance: NauticalMiles): Position {
     const delta = distance / EARTH_RADIUS;

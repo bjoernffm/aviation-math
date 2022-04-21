@@ -1,5 +1,5 @@
-import { DegreesTrue, NauticalMiles, TurnDirection } from "../common";
-import { Position } from "../position";
+import { DegreesTrue, NauticalMiles, TurnDirection } from "./common";
+import { Position } from "./position";
 import { placeBearingDistance } from "./placeBearingDistance";
 
 export function projectTurnPosition(reference: Position, inboundCourse: DegreesTrue, outboundCourse: DegreesTrue, radius: NauticalMiles, turnDirection: TurnDirection) : Position

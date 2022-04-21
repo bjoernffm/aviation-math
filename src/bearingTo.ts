@@ -1,5 +1,5 @@
-import { DegreesTrue, DegToRad, RadToDeg } from "../common";
-import { Position } from "../position";
+import { DegreesTrue, DegToRad, RadToDeg } from "./common";
+import { Position } from "./position";
 
 export function bearingTo(from: Position, to: Position): DegreesTrue {
     return (RadToDeg(Math.atan2(

@@ -1,4 +1,4 @@
-import { Position } from '../position';
+import { Position } from './position';
 import { placeBearingDistance } from './placeBearingDistance';
 
 describe('placeBearingDistance', () => {
