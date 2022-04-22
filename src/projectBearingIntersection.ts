@@ -1,7 +1,7 @@
 import * as math from 'mathjs';
 import { clampAngle, coordinatesToSpherical, DegreesTrue, sphericalToCoordinates } from './common';
-import { placeBearingDistance } from './placeBearingDistance';
-import { bearingTo } from './bearingTo';
+import { projectBearingDistance } from './projectBearingDistance';
+import { getBearing } from './getBearing';
 import { Position } from './position';
 
 /**
@@ -11,12 +11,12 @@ import { Position } from './position';
  * @param point2
  * @param bearing2
  */
-export function placeBearingIntersection(point1: Position, bearing1: DegreesTrue, point2: Position, bearing2: DegreesTrue): [Position, Position] {
+export function projectBearingIntersection(point1: Position, bearing1: DegreesTrue, point2: Position, bearing2: DegreesTrue): [Position, Position] {
     const Pa11 = coordinatesToSpherical(point1);
-    const point12 = placeBearingDistance(point1, clampAngle(bearing1), 500);
+    const point12 = projectBearingDistance(point1, clampAngle(bearing1), 500);
     const Pa12 = coordinatesToSpherical(point12);
     const Pa21 = coordinatesToSpherical(point2);
-    const point22 = placeBearingDistance(point2, clampAngle(bearing2), 500);
+    const point22 = projectBearingDistance(point2, clampAngle(bearing2), 500);
     const Pa22 = coordinatesToSpherical(point22);
 
     const N1 = math.cross(Pa11, Pa12);
@@ -32,8 +32,8 @@ export function placeBearingIntersection(point1: Position, bearing1: DegreesTrue
     const s1 = sphericalToCoordinates(I1 as [number, number, number]);
     const s2 = sphericalToCoordinates(I2 as [number, number, number]);
 
-    const brgTos1 = bearingTo(point1, s1);
-    const brgTos2 = bearingTo(point1, s2);
+    const brgTos1 = getBearing(point1, s1);
+    const brgTos2 = getBearing(point1, s2);
 
     const delta1 = Math.abs(clampAngle(bearing1) - brgTos1);
     const delta2 = Math.abs(clampAngle(bearing1) - brgTos2);

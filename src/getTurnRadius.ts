@@ -1,6 +1,6 @@
 import { Degrees, DegToRad, Knots, NauticalMiles } from "./common";
 
-export function turnRadius(speed: Knots, bankAngle: Degrees) : NauticalMiles
+export function getTurnRadius(speed: Knots, bankAngle: Degrees) : NauticalMiles
 {
     return (
         (speed/60)*(speed/60) /

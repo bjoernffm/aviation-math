@@ -1,7 +1,7 @@
 import { DegreesTrue, DegToRad, EARTH_RADIUS, MAX_LON, MIN_LON, NauticalMiles, RadToDeg } from "./common";
 import { Position } from "./position";
 
-export function placeBearingDistance(reference: Position, bearing: DegreesTrue, distance: NauticalMiles): Position {
+export function projectBearingDistance(reference: Position, bearing: DegreesTrue, distance: NauticalMiles): Position {
     const delta = distance / EARTH_RADIUS;
 
     const lat = RadToDeg(Math.asin(

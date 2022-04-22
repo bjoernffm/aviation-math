@@ -60,6 +60,6 @@ export const MAX_LON: Longitude = 180;
 export const EARTH_RADIUS: NauticalMiles = 3443.91846652;
 
 export enum TurnDirection {
-    LEFT,
-    RIGHT
+    LEFT = "LEFT",
+    RIGHT = "RIGHT"
 }

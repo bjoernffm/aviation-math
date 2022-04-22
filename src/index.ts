@@ -1,17 +1,17 @@
 import { Position } from './position';
-import { bearingTo } from './bearingTo';
-import { distance } from './distance';
-import { placeBearingDistance } from './placeBearingDistance';
-import { placeBearingIntersection } from './placeBearingIntersection';
+import { getBearing } from './getBearing';
+import { getDistance } from './getDistance';
+import { projectBearingDistance } from './projectBearingDistance';
+import { projectBearingIntersection } from './projectBearingIntersection';
 import { projectTurnPosition } from './projectTurnPosition';
-import { turnRadius } from './turnRadius';
+import { getTurnRadius } from './getTurnRadius';
 
 export {
     Position,
-    bearingTo,
-    distance,
-    placeBearingDistance,
-    placeBearingIntersection,
+    getBearing,
+    getDistance,
+    projectBearingDistance,
+    projectBearingIntersection,
     projectTurnPosition,
-    turnRadius
+    getTurnRadius
 };

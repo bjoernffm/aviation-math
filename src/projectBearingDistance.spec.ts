@@ -1,11 +1,11 @@
 import { Position } from './position';
-import { placeBearingDistance } from './placeBearingDistance';
+import { projectBearingDistance } from './projectBearingDistance';
 
 describe('placeBearingDistance', () => {
     test('should get the destination point to a given point, distance and bearing', () => {
         let result;
 
-        result = placeBearingDistance(
+        result = projectBearingDistance(
             new Position(52.518611, 13.408056),
             180,
             8.09935205184,
@@ -14,7 +14,7 @@ describe('placeBearingDistance', () => {
         expect(result.lon).toBe(13.408056);
 
         
-        result = placeBearingDistance(
+        result = projectBearingDistance(
             new Position(52.518611, 13.408056),
             135,
             8.09935205184,
@@ -24,7 +24,7 @@ describe('placeBearingDistance', () => {
     });
 
     test('should not exceed maxLon or fall below minLon', () => {
-        let result = placeBearingDistance(
+        let result = projectBearingDistance(
             new Position(18.5075232, 73.8047121),
             0,
             26997.8401728,
@@ -36,7 +36,7 @@ describe('placeBearingDistance', () => {
     it('should leave long untouched if bearing is 0 or 180', () => {
         let result;
 
-        result = placeBearingDistance(
+        result = projectBearingDistance(
             new Position(18.5075232, 73.8047121),
             0,
             0.26997840172,
@@ -44,7 +44,7 @@ describe('placeBearingDistance', () => {
         expect(result.lat).toBe(18.512014776420475);
         expect(result.lon).toBe(73.8047121);
 
-        result = placeBearingDistance(
+        result = projectBearingDistance(
             new Position(18.5075232, 73.8047121),
             180,
             0.26997840172,
