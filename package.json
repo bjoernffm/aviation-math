@@ -1,6 +1,6 @@
 {
   "name": "aviation-math",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "",
   "main": "dist/aviation-math.js",
   "module": "dist/aviation-math.js",
