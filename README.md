@@ -18,7 +18,7 @@ Useful container for coordinates. More documentation needs to be done here.
 const { Position } = require("aviation-math");
 
 const result = new Position(35.161372664038055, 33.267828863069205);
-// result.toDMS --> 35° 09′ 40.94″ N 033° 16′ 04.18″ E
+// result.toDMS() --> 35° 09′ 40.94″ N 033° 16′ 04.18″ E
 ```
 
 The class offers different conversion formats like `toDMS`, `toDMSCode`,  `toDMM`,  `toDDD`. 
