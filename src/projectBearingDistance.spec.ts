@@ -24,7 +24,7 @@ describe('placeBearingDistance', () => {
     });
 
     test('should not exceed maxLon or fall below minLon', () => {
-        let result = projectBearingDistance(
+        const result = projectBearingDistance(
             new Position(18.5075232, 73.8047121),
             0,
             26997.8401728,

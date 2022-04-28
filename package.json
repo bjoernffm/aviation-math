@@ -6,7 +6,8 @@
   "module": "dist/aviation-math.js",
   "scripts": {
     "build": "webpack",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint . --ext .ts"
   },
   "homepage": "https://github.com/bjoernffm/aviation-math#readme",
   "author": {
@@ -21,6 +22,9 @@
   "typings": "dist/types/index.d.ts",
   "devDependencies": {
     "@types/jest": "^27.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@typescript-eslint/parser": "^5.21.0",
+    "eslint": "^8.14.0",
     "jest": "^27.5.1",
     "ts-jest": "^27.1.4",
     "ts-loader": "^9.2.8",

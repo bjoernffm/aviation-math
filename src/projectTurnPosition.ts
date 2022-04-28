@@ -15,8 +15,8 @@ export function projectTurnPosition(reference: Position, inboundCourse: DegreesT
         alpha2 = outboundCourse+90;
     }
 
-    let result1 = projectBearingDistance(reference, alpha1, radius);
-    let result2 = projectBearingDistance(result1, alpha2, radius);
+    const result1 = projectBearingDistance(reference, alpha1, radius);
+    const result2 = projectBearingDistance(result1, alpha2, radius);
 
     return result2;
 }

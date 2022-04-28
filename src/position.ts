@@ -107,7 +107,7 @@ export class Position {
     }
 
     public toDMS() {
-        let result = [];
+        const result = [];
         result.push(this.latDegreesAbs.toString().padStart(2, '0')+"°");
         result.push(Math.trunc(this.latMinutes).toString().padStart(2, '0')+"′");
         result.push(this.latSeconds.toFixed(2).toString().padStart(5, '0')+"″");
@@ -122,7 +122,7 @@ export class Position {
     }
 
     public toDMSCode() {
-        let result = [];
+        const result = [];
         result.push(this.latDegreesAbs.toString().padStart(2, '0'));
         result.push(Math.trunc(this.latMinutes).toString().padStart(2, '0'));
         result.push(Math.trunc(this.latSeconds).toString().padStart(2, '0'));
@@ -137,7 +137,7 @@ export class Position {
     }
     
     public toDMM() {
-        let result = [];
+        const result = [];
         result.push(this.latDegreesAbs.toString().padStart(2, '0')+"°");
         result.push(this.latMinutes.toFixed(3).toString().padStart(2, '0')+"′");
         result.push(this.latHemisphere);
@@ -150,7 +150,7 @@ export class Position {
     }
     
     public toDDD() {
-        let result = [];
+        const result = [];
         result.push(Math.abs(this.lat).toFixed(4).toString().padStart(7, '0')+"°");
         result.push(this.latHemisphere);
         
