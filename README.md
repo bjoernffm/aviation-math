@@ -7,3 +7,107 @@ Aviation Math can be used in both node.js and in the browser.
 Install Aviation Math using [npm](https://www.npmjs.com/package/aviation-math):
 
     npm install aviation-math
+
+## Usage
+
+### Position class
+
+Useful container for coordinates. More documentation needs to be done here.
+
+``` javascript
+import { Position, } from "aviation-math";
+
+const result = new Position(35.161372664038055, 33.267828863069205);
+// result.toDMS --> 35° 09′ 40.94″ N 033° 16′ 04.18″ E
+```
+
+The class offers different conversion formats like `toDMS`, `toDMSCode`,  `toDMM`,  `toDDD`. 
+
+See http://www.c-dev.ch/2012/10/26/koordinatenformate/ for more information.
+
+### getBearing(from: Position, to: Position): DegreesTrue
+
+This function calculates the true bearing from one position to another one.
+
+``` javascript
+import { Position, getBearing } from "aviation-math";
+
+const result = getBearing(
+    new Position(39.778889, -104.9825),
+    new Position(43.778889, -102.9825),
+);
+// result = 19.787524850709246
+```
+
+### getDistance(from: Position, to: Position) : NauticalMiles
+
+This function calculates the distance in nautical miles from one position to another one.
+
+``` javascript
+import { Position, getDistance } from "aviation-math";
+
+const result = getDistance(
+    new Position(50.02756868784301, 8.534261553454376),
+    new Position(50.04004266904205, 8.586451452554849)
+);
+// result = 2.149991944029959
+```
+
+### getTurnRadius(speed: Knots, bankAngle: Degrees) : NauticalMiles
+
+This function calculates the turn radius based on the speed in knots and the bank angle.
+
+``` javascript
+import { getTurnRadius } from "aviation-math";
+
+const result = getTurnRadius(160, 30);
+// result is close to 0.645
+```
+
+### projectBearingDistance(reference: Position, bearing: DegreesTrue, distance: NauticalMiles): Position
+
+This function projects a new position based on a reference position and a certain bearing and distance.
+
+``` javascript
+import { Position, projectBearingDistance } from "aviation-math";
+
+const result = projectBearingDistance(
+    new Position(52.518611, 13.408056),
+    180,
+    8.09935205184,
+);
+// result is { lat: 52.383863707381906, lon: 13.408056 }
+```
+
+### projectBearingIntersection(point1: Position, bearing1: DegreesTrue, point2: Position, bearing2: DegreesTrue): [Position, Position]
+
+This function projects two intersections of two points and their bearings. The closer intersection is always the first item of the list.
+
+``` javascript
+import { Position, projectBearingIntersection } from "aviation-math";
+
+const a = projectBearingIntersection(
+    new Position(39.778889, -104.9825),
+    0,
+    new Position(43.778889, -102.9825),
+    0,
+);
+// result[0] is { lat: 90, lon: -90 }
+```
+
+### projectTurnPosition(reference: Position, inboundCourse: DegreesTrue, outboundCourse: DegreesTrue, radius: NauticalMiles, turnDirection: TurnDirection) : Position
+
+This function projects a position based on a reference position (, its inbound course) and a turn radius to an outbound course.
+
+``` javascript
+import { projectTurnPosition } from "aviation-math";
+
+const result = projectTurnPosition(
+    new Position(50.0379326, 8.5599631),
+    270,
+    90,
+    4,
+    "LEFT"
+);
+// result is { lat: 49.90483820750475, lon: 8.5599631 }
+```
