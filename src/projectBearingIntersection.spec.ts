@@ -1,5 +1,4 @@
-import { projectBearingIntersection } from "./projectBearingIntersection";
-import { Position } from "./position";
+import { Position, projectBearingIntersection } from "./index";
 
 describe("greatCircleIntersection", () => {
     test("should return the north pole first then south pole when both bearings are (directly north)", () => {

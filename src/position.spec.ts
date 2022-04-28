@@ -1,4 +1,4 @@
-import { Position } from "./position";
+import { Position } from "./index";
 
 describe("Position attributes", () => {
     test("attributes are correctly set", () => {
@@ -49,6 +49,34 @@ describe("Position attributes", () => {
         expect(pos.lonDegreesAbs).toBe(20);
         pos = new Position(55.12, 0);
         expect(pos.lonDegreesAbs).toBe(0);
+    });
+
+    test("latHemisphere", () => {
+        let pos;
+        pos = new Position(55.12, 20.77);
+        expect(pos.latHemisphere).toBe("N");
+        pos = new Position(-55.12, 20.77);
+        expect(pos.latHemisphere).toBe("S");
+    });
+
+    test("lonHemisphere", () => {
+        let pos;
+        pos = new Position(55.12, 20.77);
+        expect(pos.lonHemisphere).toBe("E");
+        pos = new Position(55.12, -20.77);
+        expect(pos.lonHemisphere).toBe("W");
+    });
+
+    test("isSouthernHemisphere", () => {
+        const pos = new Position(-55.12, 20.77);
+        expect(pos.isSouthernHemisphere()).toBe(true);
+        expect(pos.isNorthernHemisphere()).toBe(false);
+    });
+
+    test("isWesternHemisphere", () => {
+        const pos = new Position(55.12, -20.77);
+        expect(pos.isWesternHemisphere()).toBe(true);
+        expect(pos.isEasternHemisphere()).toBe(false);
     });
 });
 

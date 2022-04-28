@@ -1,5 +1,4 @@
-import { Position } from "./position";
-import { projectBearingDistance } from "./projectBearingDistance";
+import { Position, projectBearingDistance } from "./index";
 
 describe("placeBearingDistance", () => {
     test("should get the destination point to a given point, distance and bearing", () => {
