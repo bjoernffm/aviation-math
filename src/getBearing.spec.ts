@@ -1,8 +1,8 @@
-import { Position } from './position';
-import { getBearing } from './getBearing';
+import { Position } from "./position";
+import { getBearing } from "./getBearing";
 
-describe('bearingTo', () => {
-    it('should return a bearing between two points', () => {
+describe("bearingTo", () => {
+    it("should return a bearing between two points", () => {
         let result;
 
         result = getBearing(

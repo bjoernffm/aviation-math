@@ -1,8 +1,8 @@
-import { projectBearingIntersection } from './projectBearingIntersection';
-import { Position } from './position';
+import { projectBearingIntersection } from "./projectBearingIntersection";
+import { Position } from "./position";
 
-describe('greatCircleIntersection', () => {
-    test('should return the north pole first then south pole when both bearings are (directly north)', () => {
+describe("greatCircleIntersection", () => {
+    test("should return the north pole first then south pole when both bearings are (directly north)", () => {
         const a = projectBearingIntersection(
             new Position(39.778889, -104.9825),
             0,
@@ -16,7 +16,7 @@ describe('greatCircleIntersection', () => {
             a[1].lat,
         ).toEqual(-90);
     });
-    test('should return the south pole first then north pole when both bearings are 180 (directly south)', () => {
+    test("should return the south pole first then north pole when both bearings are 180 (directly south)", () => {
         const a = projectBearingIntersection(
             new Position(39.778889, -104.9825),
             180,
@@ -30,7 +30,7 @@ describe('greatCircleIntersection', () => {
             a[1].lat,
         ).toEqual(90);
     });
-    test('should return a coordinate on the equator when both points are the same longitude and equidistant from equator', () => {
+    test("should return a coordinate on the equator when both points are the same longitude and equidistant from equator", () => {
         const a = projectBearingIntersection(
             new Position(43, -104.9825),
             175,
@@ -44,7 +44,7 @@ describe('greatCircleIntersection', () => {
             a[1].lat,
         ).toEqual(-0);
     });
-    test('should return a coordinate half way between longitude wise when both bearings are part of isosceles triangle and both coordinates are same latitude', () => {
+    test("should return a coordinate half way between longitude wise when both bearings are part of isosceles triangle and both coordinates are same latitude", () => {
         const a = projectBearingIntersection(
             new Position(-43, 0),
             -45,

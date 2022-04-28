@@ -63,7 +63,7 @@ export class Position {
     public get latHemisphere(): string
     {
         if(this.isNorthernHemisphere()) {
-            return "N"
+            return "N";
         }
         
         return "S";
@@ -72,7 +72,7 @@ export class Position {
     public get lonHemisphere(): string
     {
         if(this.isEasternHemisphere()) {
-            return "E"
+            return "E";
         }
         
         return "W";
@@ -108,14 +108,14 @@ export class Position {
 
     public toDMS() {
         const result = [];
-        result.push(this.latDegreesAbs.toString().padStart(2, '0')+"°");
-        result.push(Math.trunc(this.latMinutes).toString().padStart(2, '0')+"′");
-        result.push(this.latSeconds.toFixed(2).toString().padStart(5, '0')+"″");
+        result.push(this.latDegreesAbs.toString().padStart(2, "0")+"°");
+        result.push(Math.trunc(this.latMinutes).toString().padStart(2, "0")+"′");
+        result.push(this.latSeconds.toFixed(2).toString().padStart(5, "0")+"″");
         result.push(this.latHemisphere);
         
-        result.push(this.lonDegreesAbs.toString().padStart(3, '0')+"°");
-        result.push(Math.trunc(this.lonMinutes).toString().padStart(2, '0')+"′");
-        result.push(this.lonSeconds.toFixed(2).toString().padStart(5, '0')+"″");
+        result.push(this.lonDegreesAbs.toString().padStart(3, "0")+"°");
+        result.push(Math.trunc(this.lonMinutes).toString().padStart(2, "0")+"′");
+        result.push(this.lonSeconds.toFixed(2).toString().padStart(5, "0")+"″");
         result.push(this.lonHemisphere);
 
         return result.join(" ");
@@ -123,14 +123,14 @@ export class Position {
 
     public toDMSCode() {
         const result = [];
-        result.push(this.latDegreesAbs.toString().padStart(2, '0'));
-        result.push(Math.trunc(this.latMinutes).toString().padStart(2, '0'));
-        result.push(Math.trunc(this.latSeconds).toString().padStart(2, '0'));
+        result.push(this.latDegreesAbs.toString().padStart(2, "0"));
+        result.push(Math.trunc(this.latMinutes).toString().padStart(2, "0"));
+        result.push(Math.trunc(this.latSeconds).toString().padStart(2, "0"));
         result.push(this.latHemisphere);
         
-        result.push(this.lonDegreesAbs.toString().padStart(3, '0'));
-        result.push(Math.trunc(this.lonMinutes).toString().padStart(2, '0'));
-        result.push(Math.trunc(this.lonSeconds).toString().padStart(2, '0'));
+        result.push(this.lonDegreesAbs.toString().padStart(3, "0"));
+        result.push(Math.trunc(this.lonMinutes).toString().padStart(2, "0"));
+        result.push(Math.trunc(this.lonSeconds).toString().padStart(2, "0"));
         result.push(this.lonHemisphere);
 
         return result.join("");
@@ -138,12 +138,12 @@ export class Position {
     
     public toDMM() {
         const result = [];
-        result.push(this.latDegreesAbs.toString().padStart(2, '0')+"°");
-        result.push(this.latMinutes.toFixed(3).toString().padStart(2, '0')+"′");
+        result.push(this.latDegreesAbs.toString().padStart(2, "0")+"°");
+        result.push(this.latMinutes.toFixed(3).toString().padStart(2, "0")+"′");
         result.push(this.latHemisphere);
         
-        result.push(this.lonDegreesAbs.toString().padStart(3, '0')+"°");
-        result.push(this.lonMinutes.toFixed(3).toString().padStart(2, '0')+"′");
+        result.push(this.lonDegreesAbs.toString().padStart(3, "0")+"°");
+        result.push(this.lonMinutes.toFixed(3).toString().padStart(2, "0")+"′");
         result.push(this.lonHemisphere);
 
         return result.join(" ");
@@ -151,10 +151,10 @@ export class Position {
     
     public toDDD() {
         const result = [];
-        result.push(Math.abs(this.lat).toFixed(4).toString().padStart(7, '0')+"°");
+        result.push(Math.abs(this.lat).toFixed(4).toString().padStart(7, "0")+"°");
         result.push(this.latHemisphere);
         
-        result.push(Math.abs(this.lon).toFixed(4).toString().padStart(8, '0')+"°");
+        result.push(Math.abs(this.lon).toFixed(4).toString().padStart(8, "0")+"°");
         result.push(this.lonHemisphere);
 
         return result.join(" ");

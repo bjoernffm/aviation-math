@@ -1,11 +1,11 @@
-import { getTurnRadius } from './getTurnRadius';
+import { getTurnRadius } from "./getTurnRadius";
 
-describe('getTurnRadius', () => {
-    test('works for beechcraft bonanza', () => {
+describe("getTurnRadius", () => {
+    test("works for beechcraft bonanza", () => {
         expect(getTurnRadius(160, 30)).toBeCloseTo(0.645);
     });
 
-    test('works for airliners', () => {
+    test("works for airliners", () => {
         expect(getTurnRadius(450, 30)).toBeCloseTo(5.14);
     });
 });

@@ -1,8 +1,8 @@
-import * as math from 'mathjs';
-import { clampAngle, coordinatesToSpherical, DegreesTrue, sphericalToCoordinates } from './common';
-import { projectBearingDistance } from './projectBearingDistance';
-import { getBearing } from './getBearing';
-import { Position } from './position';
+import * as math from "mathjs";
+import { clampAngle, coordinatesToSpherical, DegreesTrue, sphericalToCoordinates } from "./common";
+import { projectBearingDistance } from "./projectBearingDistance";
+import { getBearing } from "./getBearing";
+import { Position } from "./position";
 
 /**
  * Calculates the intercept points of two Coordinates and two bearings
