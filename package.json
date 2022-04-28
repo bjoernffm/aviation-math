@@ -4,8 +4,13 @@
   "description": "",
   "main": "dist/aviation-math.js",
   "module": "dist/aviation-math.js",
+  "files": ["dist/**/*"],
   "scripts": {
     "build": "webpack",
+    "prepare" : "npm run build",
+    "prepublishOnly" : "npm test && npm run lint",
+    "preversion" : "npm run lint",
+    "postversion" : "git push && git push --tags",
     "test": "jest",
     "lint": "eslint . --ext .ts"
   },
