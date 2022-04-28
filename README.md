@@ -15,7 +15,7 @@ Install Aviation Math using [npm](https://www.npmjs.com/package/aviation-math):
 Useful container for coordinates. More documentation needs to be done here.
 
 ``` javascript
-import { Position, } from "aviation-math";
+const { Position } = require("aviation-math");
 
 const result = new Position(35.161372664038055, 33.267828863069205);
 // result.toDMS --> 35° 09′ 40.94″ N 033° 16′ 04.18″ E
@@ -30,7 +30,7 @@ See http://www.c-dev.ch/2012/10/26/koordinatenformate/ for more information.
 This function calculates the true bearing from one position to another one.
 
 ``` javascript
-import { Position, getBearing } from "aviation-math";
+const { Position, getBearing } = require("aviation-math");
 
 const result = getBearing(
     new Position(39.778889, -104.9825),
@@ -44,7 +44,7 @@ const result = getBearing(
 This function calculates the distance in nautical miles from one position to another one.
 
 ``` javascript
-import { Position, getDistance } from "aviation-math";
+const { Position, getDistance } = require("aviation-math");
 
 const result = getDistance(
     new Position(50.02756868784301, 8.534261553454376),
@@ -58,7 +58,7 @@ const result = getDistance(
 This function calculates the turn radius based on the speed in knots and the bank angle.
 
 ``` javascript
-import { getTurnRadius } from "aviation-math";
+const { getTurnRadius } = require("aviation-math");
 
 const result = getTurnRadius(160, 30);
 // result is close to 0.645
@@ -69,7 +69,7 @@ const result = getTurnRadius(160, 30);
 This function projects a new position based on a reference position and a certain bearing and distance.
 
 ``` javascript
-import { Position, projectBearingDistance } from "aviation-math";
+const { Position, projectBearingDistance } = require("aviation-math");
 
 const result = projectBearingDistance(
     new Position(52.518611, 13.408056),
@@ -84,7 +84,7 @@ const result = projectBearingDistance(
 This function projects two intersections of two points and their bearings. The closer intersection is always the first item of the list.
 
 ``` javascript
-import { Position, projectBearingIntersection } from "aviation-math";
+const { Position, projectBearingIntersection } = require("aviation-math");
 
 const a = projectBearingIntersection(
     new Position(39.778889, -104.9825),
@@ -100,7 +100,7 @@ const a = projectBearingIntersection(
 This function projects a position based on a reference position (, its inbound course) and a turn radius to an outbound course.
 
 ``` javascript
-import { projectTurnPosition } from "aviation-math";
+const { projectTurnPosition } = require("aviation-math");
 
 const result = projectTurnPosition(
     new Position(50.0379326, 8.5599631),
