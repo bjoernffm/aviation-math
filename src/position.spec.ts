@@ -67,6 +67,11 @@ describe("Position attributes", () => {
         expect(pos.lonHemisphere).toBe("W");
     });
 
+    test("declination", () => {
+        const pos = new Position(35.1594542, 33.2753579);
+        expect(pos.declination).toBeCloseTo(5, 0);
+    });
+
     test("isSouthernHemisphere", () => {
         const pos = new Position(-55.12, 20.77);
         expect(pos.isSouthernHemisphere()).toBe(true);

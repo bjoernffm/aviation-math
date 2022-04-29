@@ -1,4 +1,5 @@
 // see http://www.c-dev.ch/2012/10/26/koordinatenformate/ for formatting
+import * as geomag from 'geomag';
 
 export class Position {
     private _lat: number;
@@ -104,6 +105,11 @@ export class Position {
     public isWesternHemisphere(): boolean
     {
         return !this.isEasternHemisphere();
+    }
+
+    public get declination(): number
+    {
+        return geomag.field(this._lat, this._lon).declination;
     }
 
     public toDMS() {
