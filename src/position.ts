@@ -1,5 +1,5 @@
 // see http://www.c-dev.ch/2012/10/26/koordinatenformate/ for formatting
-import * as geomag from 'geomag';
+import * as geomag from "geomag";
 
 export class Position {
     private _lat: number;
