@@ -12,6 +12,7 @@
     "rules": {
         "semi": ["error", "always"],
         "quotes": ["error", "double"],
-        "camelcase": ["error", { "properties": "always" }]
+        "camelcase": ["error", { "properties": "always" }],
+        "id-length": ["error", { "min": 2, "exceptions": ["e"] }]
     }
 }

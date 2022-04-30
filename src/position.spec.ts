@@ -7,6 +7,18 @@ describe("Position attributes", () => {
         expect(pos.lon).toBe(-20.77);
     });
 
+    test("attributes are correctly set via string", () => {
+        const pos = new Position("N 40.123 W 74.123");
+        expect(pos.lat).toBe(40.123);
+        expect(pos.lon).toBe(-74.123);
+    });
+
+    test("wrong string parameter", () => {
+        expect(() => {
+            new Position("Y 40.123 X 74.123");
+        }).toThrowError("Unexpected format");
+    });
+
     test("latDegrees", () => {
         let pos;
         pos = new Position(55.12, -20.77);

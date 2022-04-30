@@ -22,10 +22,10 @@ export function projectBearingIntersection(point1: Position, bearing1: DegreesTr
     const N1 = math.cross(Pa11, Pa12);
     const N2 = math.cross(Pa21, Pa22);
 
-    const L = math.cross(N1, N2);
-    const l = math.norm(L);
+    const crossL = math.cross(N1, N2);
+    const crossl = math.norm(crossL);
 
-    const I1 = math.divide(L, l);
+    const I1 = math.divide(crossL, crossl);
 
     const I2 = math.multiply(I1, -1);
 

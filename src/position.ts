@@ -1,14 +1,21 @@
 // see http://www.c-dev.ch/2012/10/26/koordinatenformate/ for formatting
 import * as geomag from "geomag";
+import { PositionParser } from "./PositionParser";
 
 export class Position {
     private _lat: number;
     private _lon: number;
 
-    public constructor(lat: number, lon: number)
+    public constructor(lat: number | string, lon: number = null)
     {
-        this._lat = lat;
-        this._lon = lon;
+        if(typeof lat === "string") {
+            const result = PositionParser.parse(lat);
+            this._lat = result.lat;
+            this._lon = result.lon;
+        } else {
+            this._lat = lat;
+            this._lon = lon;
+        }
     }
 
     public get lat(): number

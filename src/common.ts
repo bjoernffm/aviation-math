@@ -13,14 +13,14 @@ export type Metres = number;
 export type Minutes = number;
 export type NauticalMiles = number;
 
-export function clampAngle(a: DegreesTrue): DegreesTrue {
-    while (a >= 360) {
-        a -= 360;
+export function clampAngle(angle: DegreesTrue): DegreesTrue {
+    while (angle >= 360) {
+        angle -= 360;
     }
-    while (a < 0) {
-        a += 360;
+    while (angle < 0) {
+        angle += 360;
     }
-    return a;
+    return angle;
 }
 export function DegToRad(value: Degrees): Radians {
     return value * (Math.PI / 180);

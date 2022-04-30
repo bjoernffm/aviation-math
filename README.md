@@ -18,12 +18,15 @@ Install Aviation Math using [npm](https://www.npmjs.com/package/aviation-math):
 
 ### Position class
 
-Useful container for coordinates. More documentation needs to be done here.
+Useful container for coordinates. The constructor expects two parameters `lat` and `lon` or a string. More documentation needs to be done here.
 
 ``` javascript
 const { Position } = require("aviation-math");
 
-const result = new Position(35.161372664038055, 33.267828863069205);
+const pos1 = new Position(35.161372664038055, 33.267828863069205);
+// result.toDMS() --> 35° 09′ 40.94″ N 033° 16′ 04.18″ E
+
+const pos2 = new Position("35.161372664038055 N 33.267828863069205 E");
 // result.toDMS() --> 35° 09′ 40.94″ N 033° 16′ 04.18″ E
 ```
 
