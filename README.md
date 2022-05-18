@@ -24,10 +24,13 @@ Useful container for coordinates. The constructor expects two parameters `lat` a
 const { Position } = require("aviation-math");
 
 const pos1 = new Position(35.161372664038055, 33.267828863069205);
-// result.toDMS() --> 35° 09′ 40.94″ N 033° 16′ 04.18″ E
+// pos1.toDMS() --> 35° 09′ 40.94″ N 033° 16′ 04.18″ E
 
 const pos2 = new Position("35.161372664038055 N 33.267828863069205 E");
-// result.toDMS() --> 35° 09′ 40.94″ N 033° 16′ 04.18″ E
+// pos2.toDMS() --> 35° 09′ 40.94″ N 033° 16′ 04.18″ E
+
+const pos3 = new Position("40° 7.38' 74° 7.38'");
+// pos3.toDMS() --> 40° 07′ 22.80″ N 074° 07′ 22.80″ E
 ```
 
 The class offers different conversion formats like `toDMS`, `toDMSCode`,  `toDMM`,  `toDDD`. 
