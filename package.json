@@ -18,11 +18,12 @@
   ],
   "main": "dist/aviation-math.js",
   "module": "dist/aviation-math.js",
+  "types": "dist/types/index.d.ts",
   "files": [
     "dist/**/*"
   ],
   "scripts": {
-    "build": "webpack",
+    "build": "webpack && rm dist/types/*.spec.d.ts",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint && npm run build",
     "preversion": "npm run lint",
@@ -40,7 +41,6 @@
     "url": "https://github.com/bjoernffm/aviation-math.git"
   },
   "license": "ISC",
-  "typings": "dist/types/index.d.ts",
   "devDependencies": {
     "@types/jest": "^27.4.1",
     "@typescript-eslint/eslint-plugin": "^5.21.0",

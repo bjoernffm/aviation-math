@@ -6,15 +6,15 @@ export class Position {
     private _lat: number;
     private _lon: number;
 
-    public constructor(lat: number | string, lon: number = null)
+    public constructor(lat: number | string, lon?: number)
     {
-        if(typeof lat === "string") {
+        if(typeof lat === "string" && lon === null) {
             const result = PositionParser.parse(lat);
             this._lat = result.lat;
             this._lon = result.lon;
         } else {
-            this._lat = lat;
-            this._lon = lon;
+            this._lat = lat as number;
+            this._lon = lon as number;
         }
     }
 
