@@ -8,7 +8,7 @@ export class Position {
 
     public constructor(lat: number | string, lon?: number)
     {
-        if(typeof lat === "string" && lon === null) {
+        if(typeof lat === "string") {
             const result = PositionParser.parse(lat);
             this._lat = result.lat;
             this._lon = result.lon;
