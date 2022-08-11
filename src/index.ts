@@ -6,6 +6,7 @@ import { projectBearingDistance } from "./projectBearingDistance";
 import { projectBearingIntersection } from "./projectBearingIntersection";
 import { projectTurnPosition } from "./projectTurnPosition";
 import { getTurnRadius } from "./getTurnRadius";
+import { getFlybyTurnTransition } from "./getFlybyTurnTransition";
 
 export {
     Position,
@@ -15,5 +16,6 @@ export {
     projectBearingDistance,
     projectBearingIntersection,
     projectTurnPosition,
-    getTurnRadius
+    getTurnRadius,
+    getFlybyTurnTransition
 };
