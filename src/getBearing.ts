@@ -2,7 +2,7 @@ import { DegreesTrue, DegToRad, RadToDeg } from "./common";
 import { Position } from "./position";
 
 /**
- * Measure the bearing from one station to another
+ * Measure the bearing from one position to another
  * 
  * @example
  * let bearing = getBearing(

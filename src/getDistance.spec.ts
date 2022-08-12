@@ -17,7 +17,7 @@ describe("getDistance", () => {
 
     test("works for frankfurt to new york", () => {
         const pos1 = new Position(50.0379326, 8.5599631);
-        const pos2 = new Position(40.6413113,-73.780327);
+        const pos2 = new Position(40.6413113, -73.780327);
         const result = getDistance(pos1, pos2);
         expect(result).toBe(3345.2785752773593);
     });

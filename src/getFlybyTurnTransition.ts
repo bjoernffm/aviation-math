@@ -11,13 +11,13 @@ export interface FlybyTurnTransition {
     breakoutDistance: NauticalMiles
 }
 
-export function getFlybyTurnTransition(reference: Position, inboundCourse: Degrees, outboundCourse: Degrees, turnRadius: NauticalMiles): FlybyTurnTransition | void
+export function getFlybyTurnTransition(flybyWaypoint: Position, inboundCourse: Degrees, outboundCourse: Degrees, turnRadius: NauticalMiles): FlybyTurnTransition | void
 {
     const courseDelta = outboundCourse - inboundCourse;
     const breakoutDistance: NauticalMiles = Math.abs(Math.tan(DegToRad(courseDelta / 2))) * turnRadius;
 
-    const startPosition = projectBearingDistance(reference, inboundCourse+180, breakoutDistance);
-    const endPosition = projectBearingDistance(reference, outboundCourse, breakoutDistance);
+    const startPosition = projectBearingDistance(flybyWaypoint, inboundCourse+180, breakoutDistance);
+    const endPosition = projectBearingDistance(flybyWaypoint, outboundCourse, breakoutDistance);
 
     return {
         inboundCourse,

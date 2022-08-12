@@ -86,14 +86,14 @@ describe("Position attributes", () => {
 
     test("isSouthernHemisphere", () => {
         const pos = new Position(-55.12, 20.77);
-        expect(pos.isSouthernHemisphere()).toBe(true);
-        expect(pos.isNorthernHemisphere()).toBe(false);
+        expect(pos.isSouthernHemisphere).toBe(true);
+        expect(pos.isNorthernHemisphere).toBe(false);
     });
 
     test("isWesternHemisphere", () => {
         const pos = new Position(55.12, -20.77);
-        expect(pos.isWesternHemisphere()).toBe(true);
-        expect(pos.isEasternHemisphere()).toBe(false);
+        expect(pos.isWesternHemisphere).toBe(true);
+        expect(pos.isEasternHemisphere).toBe(false);
     });
 });
 

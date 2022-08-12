@@ -2,7 +2,15 @@ import { DegToRad, EARTH_RADIUS, NauticalMiles, robustAcos } from "./common";
 import { Position } from "./position";
 
 /**
- * Measure the distance from one station to another
+ * Measure the distance from one position to another
+ * 
+ * @example
+ * let distance = getDistance(
+ *     new Position(50.0379326, 8.5599631),
+ *     new Position(40.6413113, -73.780327)
+ * );
+ * // distance = 13345.2785...
+ * 
  * @param from Initial Position where to get the distance from
  * @param to Position where to get the distance to
  * @returns The distance in nautical miles
