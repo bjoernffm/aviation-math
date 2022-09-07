@@ -29,7 +29,9 @@
     "preversion": "npm run lint",
     "postversion": "git push && git push --tags",
     "test": "jest",
-    "lint": "eslint . --ext .ts"
+    "typedoc": "npx typedoc src/index.ts",
+    "lint": "eslint . --ext .ts",
+    "lint-fix": "eslint . --ext .ts --fix"
   },
   "homepage": "https://github.com/bjoernffm/aviation-math#readme",
   "author": {
@@ -42,6 +44,7 @@
   },
   "license": "ISC",
   "devDependencies": {
+    "@types/crypto-js": "^4.1.1",
     "@types/jest": "^27.4.1",
     "@typescript-eslint/eslint-plugin": "^5.21.0",
     "@typescript-eslint/parser": "^5.21.0",
@@ -55,6 +58,7 @@
     "webpack-cli": "^4.9.2"
   },
   "dependencies": {
+    "crypto-js": "^4.1.1",
     "geomag": "^1.0.0",
     "mathjs": "^10.5.0"
   }

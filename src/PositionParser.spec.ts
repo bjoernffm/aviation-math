@@ -1,5 +1,6 @@
 import { PositionParser } from "./index";
 
+/* eslint-disable max-lines-per-function */
 describe("test PositionParser class", () => {
 
     describe("testing the parse method", () => {
@@ -8,7 +9,7 @@ describe("test PositionParser class", () => {
             expect(result.lat).toBe(40.123);
             expect(result.lon).toBe(74.123);
         });
-        
+
         test("wrong format", () => {
             expect(() => {
                 PositionParser.parseDDD("40.123 U 74.123 V");

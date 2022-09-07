@@ -1,5 +1,6 @@
 import { Position, projectBearingIntersection } from "./index";
 
+/* eslint-disable max-lines-per-function */
 describe("greatCircleIntersection", () => {
     test("should return the north pole first then south pole when both bearings are (directly north)", () => {
         const intersection = projectBearingIntersection(

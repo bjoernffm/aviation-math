@@ -1,5 +1,6 @@
 import { Position, projectBearingDistance } from "./index";
 
+/* eslint-disable max-lines-per-function */
 describe("placeBearingDistance", () => {
     test("should get the destination point to a given point, distance and bearing", () => {
         let result;
@@ -12,7 +13,6 @@ describe("placeBearingDistance", () => {
         expect(result.lat).toBe(52.383863707381906);
         expect(result.lon).toBe(13.408056);
 
-        
         result = projectBearingDistance(
             new Position(52.518611, 13.408056),
             135,

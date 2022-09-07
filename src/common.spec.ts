@@ -1,5 +1,6 @@
 import { robustAcos, clampAngle } from "./common";
 
+/* eslint-disable max-lines-per-function */
 describe("common features", () => {
     test("robustAcos", () => {
         expect(robustAcos(0)).toBe(0);

@@ -1,5 +1,6 @@
 import { Position } from "./index";
 
+/* eslint-disable max-lines-per-function */
 describe("Position attributes", () => {
     test("attributes are correctly set", () => {
         const pos = new Position(55.1, -20.77);
@@ -98,23 +99,43 @@ describe("Position attributes", () => {
 });
 
 describe("Position to-functions", () => {
-    test("to DMS", () => {
+    test("to DMS northeast", () => {
         const pos = new Position(50.02756868784301, 8.534261553454376);
         expect(pos.toDMS()).toBe("50° 01′ 39.25″ N 008° 32′ 03.34″ E");
     });
 
-    test("to toDMSCode", () => {
+    test("to DMS southwest", () => {
+        const pos = new Position(-50.02756868784301, -8.534261553454376);
+        expect(pos.toDMS()).toBe("50° 01′ 39.25″ S 008° 32′ 03.34″ W");
+    });
+
+    test("to toDMSCode northeast", () => {
         const pos = new Position(50.02756868784301, 8.534261553454376);
         expect(pos.toDMSCode()).toBe("500139N0083203E");
     });
 
-    test("to toDMM", () => {
+    test("to toDMSCode southwest", () => {
+        const pos = new Position(-50.02756868784301, -8.534261553454376);
+        expect(pos.toDMSCode()).toBe("500139S0083203W");
+    });
+
+    test("to toDMM northeast", () => {
         const pos = new Position(50.02756868784301, 8.534261553454376);
         expect(pos.toDMM()).toBe("50° 1.654′ N 008° 32.056′ E");
     });
 
-    test("to toDDD", () => {
+    test("to toDMM southwest", () => {
+        const pos = new Position(-50.02756868784301, -8.534261553454376);
+        expect(pos.toDMM()).toBe("50° 1.654′ S 008° 32.056′ W");
+    });
+
+    test("to toDDD northeast", () => {
         const pos = new Position(50.02756868784301, 8.534261553454376);
         expect(pos.toDDD()).toBe("50.0276° N 008.5343° E");
+    });
+
+    test("to toDDD southwest", () => {
+        const pos = new Position(-50.02756868784301, -8.534261553454376);
+        expect(pos.toDDD()).toBe("50.0276° S 008.5343° W");
     });
 });
