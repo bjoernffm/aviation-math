@@ -159,7 +159,7 @@ export class Position {
 
     /**
      * This is a helper function to calculate the distance to a given position
-     * 
+     *
      * @param position The reference position
      * @returns The distance in nautical miles
      */
