@@ -157,6 +157,12 @@ export class Position {
         return geomag.field(this._lat, this._lon).declination;
     }
 
+    /**
+     * This is a helper function to calculate the distance to a given position
+     * 
+     * @param position The reference position
+     * @returns The distance in nautical miles
+     */
     public getDistanceTo(position: Position) : NauticalMiles
     {
         return getDistance(this, position);
