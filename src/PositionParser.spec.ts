@@ -3,19 +3,19 @@ import { PositionParser } from "./index";
 /* eslint-disable max-lines-per-function */
 describe("test PositionParser class", () => {
 
-    describe("check if parse methods are correctly integrated", () => {    
+    describe("check if parse methods are correctly integrated", () => {
         test("parseDDD method integrated", () => {
             const result = PositionParser.parse("40.123 74.123");
             expect(result.lat).toBe(40.123);
             expect(result.lon).toBe(74.123);
         });
-    
+
         test("parseDMM method integrated", () => {
             const result = PositionParser.parse("40 7.38 N 74 7.38 E");
             expect(result.lat).toBe(40.123);
             expect(result.lon).toBe(74.123);
         });
-        
+
         test("parseDMSSCode method integrated", () => {
             const result = PositionParser.parse("N50020301,E008313335");
             expect(result.lat).toBeCloseTo(50.0341694, 7);

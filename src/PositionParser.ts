@@ -90,7 +90,6 @@ export class PositionParser
         let lat: number;
         let lon: number;
 
-        console.log(result);
         if (result === null) {
             throw new Error("Unexpected format");
         }
@@ -105,7 +104,6 @@ export class PositionParser
         lon = parseInt(result[7]);
         lon += (parseInt(result[8])/60);
         lon += (parseFloat(`${result[9]}.${result[10]}`)/(60*60));
-        //console.log(result[7], lon);
         if (result[6] == "W") {
             lon *= -1;
         }
