@@ -7,12 +7,16 @@ export class PositionParser
         let pos = null;
 
         try {
-            pos = PositionParser.parseDDD(latlon);
+            pos = PositionParser.parseDMSSCode(latlon);
         } catch (e) {
             try {
-                pos = PositionParser.parseDMM(latlon);
+                pos = PositionParser.parseDDD(latlon);
             } catch (e) {
-                // disregard and check next format
+                try {
+                    pos = PositionParser.parseDMM(latlon);
+                } catch (e) {
+                    // disregard and check next format
+                }
             }
         }
 
@@ -53,8 +57,6 @@ export class PositionParser
     public static parseDMM(latlon: string) : Position
     {
         const regex = /^([ns])?[^+-\d\w]*([+-])?(\d+)[^\d\w]*(\d+\.?\d*)[^+-\d\w]*([ns])?[^+-\d\w]*([ew])?[^+-\d\w]*([+-])?(\d+)[^\d\w]*(\d+\.?\d*)[^+\-\d\w]*([ew])?$/i;
-
-        //
         const result = latlon.trim().match(regex);
 
         let lat: number;
@@ -73,6 +75,38 @@ export class PositionParser
         lon = parseFloat(result[8]);
         lon += (parseFloat(result[9])/60);
         if (result[6] == "W" || result[7] == "-" || result[10] == "W") {
+            lon *= -1;
+        }
+
+        return new Position(lat, lon);
+    }
+
+    // eg. N50020301 E008313335
+    public static parseDMSSCode(latlon: string) : Position
+    {
+        const regex = /^([ns])(\d{2})(\d{2})(\d{2})(\d{2})\W*([ew])*(\d{3})(\d{2})(\d{2})(\d{2})$/i;
+        const result = latlon.trim().match(regex);
+
+        let lat: number;
+        let lon: number;
+
+        console.log(result);
+        if (result === null) {
+            throw new Error("Unexpected format");
+        }
+
+        lat = parseInt(result[2]);
+        lat += (parseInt(result[3])/60);
+        lat += (parseFloat(`${result[4]}.${result[5]}`)/(60*60));
+        if (result[1] == "S") {
+            lat *= -1;
+        }
+
+        lon = parseInt(result[7]);
+        lon += (parseInt(result[8])/60);
+        lon += (parseFloat(`${result[9]}.${result[10]}`)/(60*60));
+        //console.log(result[7], lon);
+        if (result[6] == "W") {
             lon *= -1;
         }
 
