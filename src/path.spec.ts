@@ -41,4 +41,32 @@ describe("Path class", () => {
         expect(path.length).toEqual(2);
         expect(path.toFlightplan()).toEqual("540000N0090000E 550000N0100000E");
     });
+
+    test("distance of path using append", () => {
+        const path = new Path();
+        path.append(new Position(50.039342606427844, 8.563553936503006));
+        path.append(new Position(51.41772471633502, 9.387837439331479));
+
+        expect(path.length).toEqual(2);
+        expect(path.distance).toBeCloseTo(88.59);
+
+        path.append(new Position(53.046938293455646, 8.789498590264865));
+
+        expect(path.distance).toBeCloseTo(188.96);
+
+        const path2 = new Path();
+        path2.appendPath(path);
+
+        expect(path2.distance).toBeCloseTo(188.96);
+    });
+
+    test("distance of path using constructor", () => {
+        const path = new Path([
+            new Position(50.039342606427844, 8.563553936503006),
+            new Position(51.41772471633502, 9.387837439331479),
+            new Position(53.046938293455646, 8.789498590264865)
+        ]);
+
+        expect(path.distance).toBeCloseTo(188.96);
+    });
 });

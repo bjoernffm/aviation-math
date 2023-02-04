@@ -1,23 +1,29 @@
 import { Position } from "./position";
 import { SHA1, enc } from "crypto-js";
+import { getDistance } from "./getDistance";
 /**
  * The Path class is a container for Position classes
  */
 export class Path
 {
-    protected _positions: Position[];
+    protected _positions: Position[] = [];
+    protected _distance: number = 0;
 
     public get length(): number
     {
         return this._positions.length;
     }
 
-    public get hash(): string{
+    public get hash(): string {
         const pathString = this._positions.map((position) => {
             return position.toDMSCode();
         }).join();
 
         return SHA1(pathString).toString(enc.Hex);
+    }
+
+    public get distance(): number {
+        return this._distance;
     }
 
     /**
@@ -27,10 +33,10 @@ export class Path
      */
     public constructor(positions?: Position[])
     {
-        this._positions = [];
-
         if (positions !== undefined) {
-            this._positions = positions;
+            for (let i = 0; i < positions.length; i++) {
+                this.append(positions[i]);
+            }
         }
     }
 
@@ -42,6 +48,10 @@ export class Path
      */
     public append(position: Position): Path
     {
+        if(this._positions.length > 0) {
+            this._distance += getDistance(this._positions[this.length-1], position);
+        }
+
         this._positions.push(position);
         return this;
     }
