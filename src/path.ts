@@ -5,7 +5,7 @@ import { SHA1, enc } from "crypto-js";
  */
 export class Path
 {
-    private _positions: Position[];
+    protected _positions: Position[];
 
     public get length(): number
     {
