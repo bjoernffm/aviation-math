@@ -7,7 +7,7 @@ import { getDistance } from "./getDistance";
 export class Path
 {
     protected _positions: Position[] = [];
-    protected _distance: number = 0;
+    protected _distance = 0;
 
     public get length(): number
     {
@@ -48,7 +48,7 @@ export class Path
      */
     public append(position: Position): Path
     {
-        if(this._positions.length > 0) {
+        if (this._positions.length > 0) {
             this._distance += getDistance(this._positions[this.length-1], position);
         }
 
