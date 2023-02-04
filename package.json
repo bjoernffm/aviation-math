@@ -1,6 +1,6 @@
 {
   "name": "aviation-math",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "Different methods to calculate distances, bearing and projections for aviation related software",
   "keywords": [
     "math",
