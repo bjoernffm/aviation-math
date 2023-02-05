@@ -20,6 +20,12 @@ describe("common features", () => {
         expect(getCourseDelta(90, 280)).toBe(-170);
         expect(getCourseDelta(270, 100)).toBe(-170);
 
+        expect(getCourseDelta(360, 720)).toBe(0);
+        expect(getCourseDelta(720, 360)).toBe(0);
+        expect(getCourseDelta(0, 360)).toBe(0);
+        expect(getCourseDelta(360, 0)).toBe(0);
+        expect(getCourseDelta(90, 90)).toBe(0);
+
         expect(() => {
             getCourseDelta(270, 90);
         }).toThrowError("Turn direction indistinct");
