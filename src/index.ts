@@ -9,6 +9,7 @@ import { projectTurnPosition } from "./projectTurnPosition";
 import { projectTurnPath, ProjectTurnPathInput } from "./projectTurnPath";
 import { getTurnRadius } from "./getTurnRadius";
 import { getCourseDelta } from "./getCourseDelta";
+import { getTrackOffset, OffsetData } from "./getTrackOffset";
 import { TurnTransition, TurnTransitionInput, FlybyTurnTransition, FlybyTurnTransitionInput, FlyoverTurnTransition, FlyoverTurnTransitionInput } from "./Transitions";
 import { Degrees, DegreesTrue, NauticalMiles, TurnDirection } from "./common";
 
@@ -19,6 +20,7 @@ export {
     FlybyTurnTransition,
     FlyoverTurnTransition,
     Path,
+    OffsetData,
 
     DegreesTrue,
     Degrees,
@@ -36,5 +38,6 @@ export {
     projectTurnPosition,
     projectTurnPath,
     getTurnRadius,
-    getCourseDelta
+    getCourseDelta,
+    getTrackOffset
 };
