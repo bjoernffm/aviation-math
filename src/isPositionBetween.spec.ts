@@ -1,6 +1,7 @@
-import { Position, getDistance } from "./index";
+import { Position } from "./index";
 import { isPositionBetween } from "./isPositionBetween";
 
+/* eslint-disable max-lines-per-function */
 describe("isPositionBetween", () => {
     test("south prior north east to south west", () => {
         const pos1 = new Position("494707N0072853E");

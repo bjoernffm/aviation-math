@@ -82,6 +82,7 @@ export class PositionParser
     }
 
     // eg. N50020301 E008313335
+    /* eslint max-lines-per-function: ["error", { "max": 36 }] */
     public static parseDMSSCode(latlon: string) : Position
     {
         const regex = /^([ns])?(\d{2})(\d{2})(\d{2})(\d{2})?([ns])?\W*([ew])?(\d{3})(\d{2})(\d{2})(\d{2})?([ew])?$/i;
@@ -110,7 +111,7 @@ export class PositionParser
         if (result[11] !== undefined) {
             lon += (parseFloat(`${result[10]}.${result[11]}`)/(60*60));
         } else {
-            lat += (parseFloat(result[10])/(60*60));
+            lon += (parseFloat(result[10])/(60*60));
         }
         if (result[7] == "W" || result[12] == "W") {
             lon *= -1;

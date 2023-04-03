@@ -200,8 +200,8 @@ describe("test PositionParser class", () => {
 
         test("Difficult formatting", () => {
             const result = PositionParser.parseDMSSCode("083001SE1510433");
-            expect(result.lat).toBeCloseTo(-8.491, 2);
-            expect(result.lon).toBeCloseTo(151.066, 2);
+            expect(result.lat).toBeCloseTo(-8.50027, 3);
+            expect(result.lon).toBeCloseTo(151.07583, 3);
         });
 
         test("wrong format", () => {
