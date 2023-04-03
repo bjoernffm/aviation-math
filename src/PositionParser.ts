@@ -96,7 +96,7 @@ export class PositionParser
 
         lat = parseInt(result[2]);
         lat += (parseInt(result[3])/60);
-        if(result[5] !== undefined) {
+        if (result[5] !== undefined) {
             lat += (parseFloat(`${result[4]}.${result[5]}`)/(60*60));
         } else {
             lat += (parseFloat(result[4])/(60*60));
@@ -107,7 +107,7 @@ export class PositionParser
 
         lon = parseInt(result[8]);
         lon += (parseInt(result[9])/60);
-        if(result[11] !== undefined) {
+        if (result[11] !== undefined) {
             lon += (parseFloat(`${result[10]}.${result[11]}`)/(60*60));
         } else {
             lat += (parseFloat(result[10])/(60*60));
