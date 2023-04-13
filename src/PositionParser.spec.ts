@@ -192,10 +192,16 @@ describe("test PositionParser class", () => {
             expect(result.lon).toBeCloseTo(151.0758667, 7);
         });
 
-        test("wrong format", () => {
-            expect(() => {
-                PositionParser.parseDMSSCode("08300132SE151043312");
-            }).toThrowError("Unexpected format");
+        test("Difficult formatting", () => {
+            const result = PositionParser.parseDMSSCode("08300132SE151043312");
+            expect(result.lat).toBeCloseTo(-8.5003667, 7);
+            expect(result.lon).toBeCloseTo(151.0758667, 7);
+        });
+
+        test("Difficult formatting", () => {
+            const result = PositionParser.parseDMSSCode("083001SE1510433");
+            expect(result.lat).toBeCloseTo(-8.50027, 3);
+            expect(result.lon).toBeCloseTo(151.07583, 3);
         });
 
         test("wrong format", () => {

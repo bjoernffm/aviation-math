@@ -82,9 +82,10 @@ export class PositionParser
     }
 
     // eg. N50020301 E008313335
+    /* eslint max-lines-per-function: ["error", { "max": 36 }] */
     public static parseDMSSCode(latlon: string) : Position
     {
-        const regex = /^([ns])(\d{2})(\d{2})(\d{2})(\d{2})\W*([ew])*(\d{3})(\d{2})(\d{2})(\d{2})$/i;
+        const regex = /^([ns])?(\d{2})(\d{2})(\d{2})(\d{2})?([ns])?\W*([ew])?(\d{3})(\d{2})(\d{2})(\d{2})?([ew])?$/i;
         const result = latlon.trim().match(regex);
 
         let lat: number;
@@ -96,15 +97,23 @@ export class PositionParser
 
         lat = parseInt(result[2]);
         lat += (parseInt(result[3])/60);
-        lat += (parseFloat(`${result[4]}.${result[5]}`)/(60*60));
-        if (result[1] == "S") {
+        if (result[5] !== undefined) {
+            lat += (parseFloat(`${result[4]}.${result[5]}`)/(60*60));
+        } else {
+            lat += (parseFloat(result[4])/(60*60));
+        }
+        if (result[1] == "S" || result[6] == "S") {
             lat *= -1;
         }
 
-        lon = parseInt(result[7]);
-        lon += (parseInt(result[8])/60);
-        lon += (parseFloat(`${result[9]}.${result[10]}`)/(60*60));
-        if (result[6] == "W") {
+        lon = parseInt(result[8]);
+        lon += (parseInt(result[9])/60);
+        if (result[11] !== undefined) {
+            lon += (parseFloat(`${result[10]}.${result[11]}`)/(60*60));
+        } else {
+            lon += (parseFloat(result[10])/(60*60));
+        }
+        if (result[7] == "W" || result[12] == "W") {
             lon *= -1;
         }
 
