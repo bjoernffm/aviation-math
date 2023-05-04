@@ -45,7 +45,6 @@ export class FlybyTurnTransition extends TurnTransition
         this._endPosition = this.generatePath().getLast();
     }
 
-    
     public toPath(): Path
     {
         const path = new Path();

@@ -1,7 +1,7 @@
-import { DegreesTrue, NauticalMiles, TurnDirection } from "../common"
-import { Path } from "../path"
-import { Position } from "../position"
-import { projectBearingDistance } from "../projectBearingDistance"
+import { DegreesTrue, NauticalMiles, TurnDirection } from "../common";
+import { Path } from "../path";
+import { Position } from "../position";
+import { projectBearingDistance } from "../projectBearingDistance";
 
 export interface SectorSearchPatternInput
 {
@@ -13,11 +13,11 @@ export interface SectorSearchPatternInput
 
 export class SectorSearchPattern
 {
-    private _initialPosition: Position
-    private _initialCourse: DegreesTrue
-    private _initialTurn: TurnDirection
-    private _legLength: NauticalMiles
-    
+    private _initialPosition: Position;
+    private _initialCourse: DegreesTrue;
+    private _initialTurn: TurnDirection;
+    private _legLength: NauticalMiles;
+
     /**
      * Constructor method
      *
@@ -30,34 +30,34 @@ export class SectorSearchPattern
         this._initialTurn = TurnDirection.LEFT;
         this._legLength = 5;
 
-        if('initialTurn' in input && input.initialTurn !== undefined) {
+        if ("initialTurn" in input && input.initialTurn !== undefined) {
             this._initialTurn = input.initialTurn;
         }
-        if('legLength' in input && input.legLength !== undefined) {
+        if ("legLength" in input && input.legLength !== undefined) {
             this._legLength = input.legLength;
         }
     }
 
     /**
-     * 
+     *
      * @returns The calculated search pattern via a Path instance
      */
     public toPath()
     {
-        let path = new Path();
+        const path = new Path();
         path.append(this._initialPosition);
         let currentCourse = this._initialCourse;
         let turnBy = -120;
-        if(this._initialTurn == TurnDirection.RIGHT) {
+        if (this._initialTurn == TurnDirection.RIGHT) {
             turnBy = 120;
         }
 
-        for(let i = 0; i < 7; i++) {
-            if(i > 0) {
+        for (let i = 0; i < 7; i++) {
+            if (i > 0) {
                 currentCourse += turnBy;
             }
 
-            if(i == 2 || i == 4) {
+            if (i == 2 || i == 4) {
                 path.append(projectBearingDistance(path.getLast(), currentCourse, this._legLength*2));
             } else {
                 path.append(projectBearingDistance(path.getLast(), currentCourse, this._legLength));
