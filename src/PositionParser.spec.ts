@@ -1,4 +1,4 @@
-import { PositionParser } from "./index";
+import { PositionParser } from ".";
 
 /* eslint-disable max-lines-per-function */
 describe("test PositionParser class", () => {

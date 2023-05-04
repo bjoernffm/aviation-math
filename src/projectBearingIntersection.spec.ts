@@ -1,4 +1,4 @@
-import { Position, projectBearingIntersection } from "./index";
+import { Position, projectBearingIntersection } from ".";
 
 /* eslint-disable max-lines-per-function */
 describe("greatCircleIntersection", () => {

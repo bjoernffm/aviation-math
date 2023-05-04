@@ -12,6 +12,8 @@ import { getCourseDelta } from "./getCourseDelta";
 import { getTrackOffset, OffsetData } from "./getTrackOffset";
 import { TurnTransition, TurnTransitionInput, FlybyTurnTransition, FlybyTurnTransitionInput, FlyoverTurnTransition, FlyoverTurnTransitionInput } from "./Transitions";
 import { Degrees, DegreesTrue, NauticalMiles, TurnDirection } from "./common";
+import { ExpandingSquareSearchPattern, ExpandingSquareSearchPatternInput, ParallelTrackSearchPattern, ParallelTrackSearchPatternInput, SectorSearchPattern, SectorSearchPatternInput } from "./Patterns";
+import { isPositionBetween } from "./isPositionBetween";
 
 export {
     Position,
@@ -21,6 +23,9 @@ export {
     FlyoverTurnTransition,
     Path,
     OffsetData,
+    ExpandingSquareSearchPattern,
+    ParallelTrackSearchPattern,
+    SectorSearchPattern,
 
     DegreesTrue,
     Degrees,
@@ -30,6 +35,9 @@ export {
     FlybyTurnTransitionInput,
     FlyoverTurnTransitionInput,
     ProjectTurnPathInput,
+    ExpandingSquareSearchPatternInput,
+    ParallelTrackSearchPatternInput,
+    SectorSearchPatternInput,
 
     getBearing,
     getDistance,
@@ -39,5 +47,6 @@ export {
     projectTurnPath,
     getTurnRadius,
     getCourseDelta,
-    getTrackOffset
+    getTrackOffset,
+    isPositionBetween
 };

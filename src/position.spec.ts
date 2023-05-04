@@ -1,4 +1,4 @@
-import { Position } from "./index";
+import { Position } from ".";
 
 /* eslint-disable max-lines-per-function */
 describe("Position attributes", () => {
@@ -95,6 +95,13 @@ describe("Position attributes", () => {
         const pos = new Position(55.12, -20.77);
         expect(pos.isWesternHemisphere).toBe(true);
         expect(pos.isEasternHemisphere).toBe(false);
+    });
+
+    test("getDistanceTo", () => {
+        const pos1 = new Position(50.0379326, 8.5599631);
+        const pos2 = new Position(40.6413113, -73.780327);
+        const result = pos1.getDistanceTo(pos2);
+        expect(result).toBe(3345.2785752773593);
     });
 });
 

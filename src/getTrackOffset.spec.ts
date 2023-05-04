@@ -1,5 +1,4 @@
-import { getTrackOffset } from "./getTrackOffset";
-import { Position } from "./index";
+import { getTrackOffset, Position } from ".";
 
 describe("getTrackOffset", () => {
     test("works for north of the track", () => {

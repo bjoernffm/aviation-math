@@ -1,10 +1,13 @@
 import { Path } from "..";
 import { TurnDirection } from "../common";
 import { Position } from "../position";
-import { TurnTransition } from "./TurnTransition";
+import { TurnTransition } from "../";
 
 class TestTurnTransition extends TurnTransition {
     public generatePath(): Path {
+        throw new Error("not implemented due to testing");
+    }
+    public toPath(): Path {
         throw new Error("not implemented due to testing");
     }
 }
@@ -42,6 +45,23 @@ describe("TurnTransition", () => {
             turnDirection: TurnDirection.RIGHT
         });
 
-        expect(turnTransition.toPath().length).toBe(0);
+        expect(() => {
+            turnTransition.toPath();
+        }).toThrow();
+    });
+
+    test("should throw an error when using generatePath() method", () => {
+        const turnTransition = new TestTurnTransition({
+            inboundCourse: 180,
+            outboundCourse: 90,
+            startPosition: new Position(50, 9),
+            endPosition: new Position(51, 10),
+            turnRadius: 10,
+            turnDirection: TurnDirection.RIGHT
+        });
+
+        expect(() => {
+            turnTransition.generatePath();
+        }).toThrow();
     });
 });

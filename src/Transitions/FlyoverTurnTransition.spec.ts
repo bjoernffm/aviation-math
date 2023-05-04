@@ -1,6 +1,6 @@
 import { TurnDirection } from "../common";
 import { Position } from "../position";
-import { FlyoverTurnTransition } from "./FlyoverTurnTransition";
+import { FlyoverTurnTransition } from "../";
 
 /* eslint-disable max-lines-per-function */
 describe("FlyoverTurnTransition", () => {

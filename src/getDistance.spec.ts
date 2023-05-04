@@ -1,4 +1,4 @@
-import { Position, getDistance } from "./index";
+import { Position, getDistance } from ".";
 
 describe("getDistance", () => {
     test("works for north-eastern part", () => {

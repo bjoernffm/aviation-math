@@ -1,5 +1,4 @@
-import { Position } from "./index";
-import { isPositionBetween } from "./isPositionBetween";
+import { Position, isPositionBetween } from ".";
 
 /* eslint-disable max-lines-per-function */
 describe("isPositionBetween", () => {

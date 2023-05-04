@@ -1,4 +1,4 @@
-import { Position, projectBearingDistance } from "./index";
+import { Position, projectBearingDistance } from ".";
 
 /* eslint-disable max-lines-per-function */
 describe("placeBearingDistance", () => {

@@ -82,12 +82,10 @@ export abstract class TurnTransition
     }
 
     /**
-     * Dummy function to be replaced by the inheriting classes.
+     * @deprecated
+     * @returns Path
      */
     abstract generatePath(): Path;
 
-    public toPath(): Path
-    {
-        return this._path;
-    }
+    abstract toPath(): Path;
 }

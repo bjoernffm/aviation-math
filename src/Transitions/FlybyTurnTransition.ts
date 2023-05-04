@@ -45,7 +45,7 @@ export class FlybyTurnTransition extends TurnTransition
         this._endPosition = this.generatePath().getLast();
     }
 
-    public generatePath(): Path
+    public toPath(): Path
     {
         const path = new Path();
         let currentHeading = this.inboundCourse;
@@ -66,5 +66,14 @@ export class FlybyTurnTransition extends TurnTransition
         this._path = path;
 
         return path;
+    }
+
+    /**
+     * @deprecated
+     * @returns Path
+     */
+    public generatePath(): Path
+    {
+        return this.toPath();
     }
 }
