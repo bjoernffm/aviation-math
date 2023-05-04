@@ -1,4 +1,4 @@
-import { getTurnRadius } from "./index";
+import { getTurnRadius } from ".";
 
 describe("getTurnRadius", () => {
     test("works for beechcraft bonanza", () => {

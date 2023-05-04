@@ -1,5 +1,4 @@
-import { TurnDirection } from "./common";
-import { Position, projectTurnPosition } from "./index";
+import { Position, projectTurnPosition, TurnDirection } from ".";
 
 describe("placeBearingDistance", () => {
     test("should get the destination point to a given point, distance and bearing with a left turn", () => {

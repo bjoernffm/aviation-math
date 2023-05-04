@@ -64,7 +64,7 @@ export class FlyoverTurnTransition extends TurnTransition
         this._endPosition = this.generatePath().getLast();
     }
 
-    public generatePath() : Path
+    public toPath() : Path
     {
         const turnPath = projectTurnPath({
             startPosition: this.startPosition,
@@ -86,5 +86,14 @@ export class FlyoverTurnTransition extends TurnTransition
         this._path = turnPath;
 
         return turnPath;
+    }
+
+    /**
+     * @deprecated
+     * @returns Path
+     */
+    public generatePath(): Path
+    {
+        return this.toPath();
     }
 }

@@ -1,5 +1,4 @@
-import { TurnDirection } from "./common";
-import { getCourseDelta } from "./getCourseDelta";
+import { getCourseDelta, TurnDirection } from ".";
 
 /* eslint-disable max-lines-per-function */
 describe("common features", () => {

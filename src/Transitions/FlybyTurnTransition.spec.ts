@@ -1,5 +1,5 @@
 import { Position } from "../position";
-import { FlybyTurnTransition } from "./FlybyTurnTransition";
+import { FlybyTurnTransition } from "../";
 
 /* eslint-disable max-lines-per-function */
 describe("FlybyTurnTransition", () => {

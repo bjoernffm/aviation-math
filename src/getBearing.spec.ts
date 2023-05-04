@@ -1,4 +1,4 @@
-import { Position, getBearing } from "./index";
+import { Position, getBearing } from ".";
 
 describe("bearingTo", () => {
     it("should return a bearing between two points", () => {

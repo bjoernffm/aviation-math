@@ -1,4 +1,4 @@
-import { Path, Position } from "./index";
+import { Path, Position } from ".";
 
 /* eslint-disable max-lines-per-function */
 describe("Path class", () => {
