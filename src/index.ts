@@ -8,10 +8,11 @@ import { projectBearingIntersection } from "./projectBearingIntersection";
 import { projectTurnPosition } from "./projectTurnPosition";
 import { projectTurnPath, ProjectTurnPathInput } from "./projectTurnPath";
 import { getTurnRadius } from "./getTurnRadius";
+import { getVerticalFlightpathAngle } from "./getVerticalFlightpathAngle";
 import { getCourseDelta } from "./getCourseDelta";
 import { getTrackOffset, OffsetData } from "./getTrackOffset";
 import { TurnTransition, TurnTransitionInput, FlybyTurnTransition, FlybyTurnTransitionInput, FlyoverTurnTransition, FlyoverTurnTransitionInput } from "./Transitions";
-import { Degrees, DegreesTrue, NauticalMiles, TurnDirection } from "./common";
+import { Degrees, DegreesTrue, NauticalMiles, TurnDirection, Knots, FeetPerMinute, Feet } from "./common";
 import { ExpandingSquareSearchPattern, ExpandingSquareSearchPatternInput, ParallelTrackSearchPattern, ParallelTrackSearchPatternInput, SectorSearchPattern, SectorSearchPatternInput } from "./Patterns";
 import { isPositionBetween } from "./isPositionBetween";
 
@@ -31,6 +32,9 @@ export {
     Degrees,
     NauticalMiles,
     TurnDirection,
+    Knots,
+    FeetPerMinute,
+    Feet,
     TurnTransitionInput,
     FlybyTurnTransitionInput,
     FlyoverTurnTransitionInput,
@@ -46,6 +50,7 @@ export {
     projectTurnPosition,
     projectTurnPath,
     getTurnRadius,
+    getVerticalFlightpathAngle,
     getCourseDelta,
     getTrackOffset,
     isPositionBetween
