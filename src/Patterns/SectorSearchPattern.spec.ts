@@ -2,7 +2,6 @@ import { TurnDirection } from "../common";
 import { Position } from "../position";
 import { SectorSearchPattern } from "../";
 
-/* eslint-disable max-lines-per-function */
 describe("SectorSearchPattern", () => {
     test("Minimal initialization", () => {
         const pattern = new SectorSearchPattern({

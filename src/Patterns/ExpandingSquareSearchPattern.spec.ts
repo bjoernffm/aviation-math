@@ -2,7 +2,6 @@ import { TurnDirection } from "../common";
 import { Position } from "../position";
 import { ExpandingSquareSearchPattern } from "../";
 
-/* eslint-disable max-lines-per-function */
 describe("ExpandingSquareSearchPattern", () => {
     test("Minimal initialization", () => {
         const pattern = new ExpandingSquareSearchPattern({
