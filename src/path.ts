@@ -14,6 +14,10 @@ export class Path
         return this._positions.length;
     }
 
+    /**
+     * @deprecated
+     * This property is deprecated and will be removed in future versions.
+     */
     public get hash(): string {
         const pathString = this._positions.map((position) => {
             return position.toDMSCode();

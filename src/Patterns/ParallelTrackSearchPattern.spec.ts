@@ -2,7 +2,6 @@ import { TurnDirection } from "../common";
 import { Position } from "../position";
 import { ParallelTrackSearchPattern } from "../";
 
-/* eslint-disable max-lines-per-function */
 describe("ParallelTrackSearchPattern", () => {
     test("Minimal initialization", () => {
         const pattern = new ParallelTrackSearchPattern({

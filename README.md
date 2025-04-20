@@ -3,7 +3,7 @@
 [![Version](https://img.shields.io/npm/v/aviation-math.svg)](https://www.npmjs.com/package/aviation-math)
 [![Downloads](https://img.shields.io/npm/dm/aviation-math.svg)](https://www.npmjs.com/package/aviation-math)
 [![Build Status](https://github.com/bjoernffm/aviation-math//workflows/Node.js%20CI/badge.svg)](https://github.com/bjoernffm/aviation-math//actions)
-[![Maintenance](https://img.shields.io/maintenance/yes/2023.svg)](https://github.com/bjoernffm/aviation-math/graphs/commit-activity)
+[![Maintenance](https://img.shields.io/maintenance/yes/2025.svg)](https://github.com/bjoernffm/aviation-math/graphs/commit-activity)
 [![Codecov](https://codecov.io/gh/bjoernffm/aviation-math/branch/main/graph/badge.svg)](https://codecov.io/gh/bjoernffm/aviation-math)
 
 ## Installation
