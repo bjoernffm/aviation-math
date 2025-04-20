@@ -29,8 +29,8 @@
     "preversion": "npm run lint",
     "postversion": "git push && git push --tags",
     "test": "jest",
-    "lint": "eslint . --ext .ts",
-    "lint-fix": "eslint . --ext .ts --fix"
+    "lint": "npx eslint src/",
+    "lint-fix": "npx eslint src/ --fix"
   },
   "homepage": "https://github.com/bjoernffm/aviation-math#readme",
   "author": {
