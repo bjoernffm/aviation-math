@@ -1,6 +1,7 @@
 import { TurnDirection } from "../common";
 import { Position } from "../position";
 import { FlyoverTurnTransition } from "../";
+import { pathToHash } from "../TestHelpers";
 
 /* eslint-disable max-lines-per-function */
 describe("FlyoverTurnTransition", () => {
@@ -17,7 +18,7 @@ describe("FlyoverTurnTransition", () => {
         expect(turnTransition.endPosition.toDMSCode()).toBe(turnTransition.toPath().getLast().toDMSCode());
 
         expect(turnTransition.toPath().length).toBe(170);
-        expect(turnTransition.toPath().hash).toBe("c557ec35801f8139f45f7be0411bc5f27d89c786");
+        expect(pathToHash(turnTransition.toPath())).toBe("c557ec35801f8139f45f7be0411bc5f27d89c786");
     });
 
     test("left turn by 180°", () => {
@@ -30,7 +31,7 @@ describe("FlyoverTurnTransition", () => {
         });
 
         expect(turnTransition.toPath().length).toBe(260);
-        expect(turnTransition.toPath().hash).toBe("9d63a0fbc1a4d8fc2231d35394760378a3a5062a");
+        expect(pathToHash(turnTransition.toPath())).toBe("9d63a0fbc1a4d8fc2231d35394760378a3a5062a");
     });
 
     test("left turn by 270°", () => {
@@ -43,7 +44,7 @@ describe("FlyoverTurnTransition", () => {
         });
 
         expect(turnTransition.toPath().length).toBe(350);
-        expect(turnTransition.toPath().hash).toBe("f24ce3f5dbe83d6ab2c21a71dd841435252e22ad");
+        expect(pathToHash(turnTransition.toPath())).toBe("f24ce3f5dbe83d6ab2c21a71dd841435252e22ad");
     });
 
     test("right turn by 90°", () => {
@@ -56,7 +57,7 @@ describe("FlyoverTurnTransition", () => {
         });
 
         expect(turnTransition.toPath().length).toBe(170);
-        expect(turnTransition.toPath().hash).toBe("992b0a79dd5838a7a44f4c0300e2d7c0f54609a9");
+        expect(pathToHash(turnTransition.toPath())).toBe("992b0a79dd5838a7a44f4c0300e2d7c0f54609a9");
     });
 
     test("right turn by 180°", () => {
@@ -69,7 +70,7 @@ describe("FlyoverTurnTransition", () => {
         });
 
         expect(turnTransition.toPath().length).toBe(260);
-        expect(turnTransition.toPath().hash).toBe("7c1ac75b2623532a069a5091e06b1ae6ef2e2790");
+        expect(pathToHash(turnTransition.toPath())).toBe("7c1ac75b2623532a069a5091e06b1ae6ef2e2790");
     });
 
     test("right turn by 270", () => {
@@ -82,7 +83,7 @@ describe("FlyoverTurnTransition", () => {
         });
 
         expect(turnTransition.toPath().length).toBe(350);
-        expect(turnTransition.toPath().hash).toBe("918eb16d708d05abdc9fc258721233e2f3a0790d");
+        expect(pathToHash(turnTransition.toPath())).toBe("918eb16d708d05abdc9fc258721233e2f3a0790d");
     });
 
     test("turn with more than 300 degrees", () => {

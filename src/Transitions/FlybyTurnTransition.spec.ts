@@ -1,5 +1,6 @@
 import { Position } from "../position";
 import { FlybyTurnTransition } from "../";
+import { pathToHash } from "../TestHelpers";
 
 /* eslint-disable max-lines-per-function */
 describe("FlybyTurnTransition", () => {
@@ -15,7 +16,7 @@ describe("FlybyTurnTransition", () => {
         expect(turnTransition.endPosition.toDMSCode()).toBe(turnTransition.toPath().getLast().toDMSCode());
 
         expect(turnTransition.toPath().length).toBe(77);
-        expect(turnTransition.toPath().hash).toBe("ed56324adc12a552237c4d75c35d38635cb76aa5");
+        expect(pathToHash(turnTransition.toPath())).toBe("ed56324adc12a552237c4d75c35d38635cb76aa5");
     });
 
     test("right turn transition less than 180°", () => {
@@ -30,7 +31,7 @@ describe("FlybyTurnTransition", () => {
         expect(turnTransition.endPosition.toDMSCode()).toBe(turnTransition.toPath().getLast().toDMSCode());
 
         expect(turnTransition.toPath().length).toBe(87);
-        expect(turnTransition.toPath().hash).toBe("707143abb217b60778e5beadab4c76721c98bf48");
+        expect(pathToHash(turnTransition.toPath())).toBe("707143abb217b60778e5beadab4c76721c98bf48");
     });
 
     test("shallow turn", () => {
@@ -42,7 +43,7 @@ describe("FlybyTurnTransition", () => {
         });
 
         expect(turnTransition.toPath().length).toBe(30);
-        expect(turnTransition.toPath().hash).toBe("415de77e12ad42b6f033eeb19cdad40043bf16af");
+        expect(pathToHash(turnTransition.toPath())).toBe("415de77e12ad42b6f033eeb19cdad40043bf16af");
     });
 
     test("tight turn", () => {
@@ -54,7 +55,7 @@ describe("FlybyTurnTransition", () => {
         });
 
         expect(turnTransition.toPath().length).toBe(150);
-        expect(turnTransition.toPath().hash).toBe("96d526a01c20d4e9d1f4f42e72c4b86453eec9dd");
+        expect(pathToHash(turnTransition.toPath())).toBe("96d526a01c20d4e9d1f4f42e72c4b86453eec9dd");
     });
 
     test("turns with > 180° should throw an error", () => {
