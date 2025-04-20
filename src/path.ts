@@ -19,7 +19,7 @@ export class Path
             return position.toDMSCode();
         }).join();
 
-        return createHash('sha1').update(pathString).digest('hex');
+        return createHash("sha1").update(pathString).digest("hex");
     }
 
     public get distance(): number {

@@ -8,13 +8,13 @@ export class PositionParser
 
         try {
             pos = PositionParser.parseDMSSCode(latlon);
-        } catch (e) {
+        } catch {
             try {
                 pos = PositionParser.parseDDD(latlon);
-            } catch (e) {
+            } catch {
                 try {
                     pos = PositionParser.parseDMM(latlon);
-                } catch (e) {
+                } catch {
                     // disregard and check next format
                 }
             }
