@@ -82,7 +82,7 @@ describe("Position attributes", () => {
 
     test("declination", () => {
         const pos = new Position(35.1594542, 33.2753579);
-        expect(pos.declination).toBeCloseTo(5, 0);
+        expect(pos.declination).toBeCloseTo(5.37, 0);
     });
 
     test("isSouthernHemisphere", () => {

@@ -1,5 +1,5 @@
 import { Position } from "./position";
-import { SHA1, enc } from "crypto-js";
+import { createHash } from "crypto";
 import { getDistance } from "./getDistance";
 /**
  * The Path class is a container for Position classes
@@ -19,7 +19,7 @@ export class Path
             return position.toDMSCode();
         }).join();
 
-        return SHA1(pathString).toString(enc.Hex);
+        return createHash('sha1').update(pathString).digest('hex');
     }
 
     public get distance(): number {
